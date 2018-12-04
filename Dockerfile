@@ -21,9 +21,10 @@ LABEL name="https://github.com/jefferyb/openshift-ubuntu" \
 
 ### Setup user for build execution and application runtime
 ENV APP_ROOT=/opt/app-root
-ENV PATH=${APP_ROOT}/bin:${PATH} HOME=${APP_ROOT}
-COPY bin/ ${APP_ROOT}/bin/
-RUN chmod -R u+x ${APP_ROOT}/bin && \
+ENV PATH=/usr/local/bin:${PATH} HOME=${APP_ROOT}
+COPY bin/ /usr/local/bin/
+RUN mkdir ${APP_ROOT} && \
+    chmod -R u+x /usr/local/bin && \
     chgrp -R 0 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
 
