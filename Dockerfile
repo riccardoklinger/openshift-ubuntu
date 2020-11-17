@@ -27,7 +27,7 @@ RUN mkdir ${APP_ROOT} && \
     chmod -R u+x /usr/local/bin && \
     chgrp -R 0 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT} /etc/passwd
-
+    apt-get install gettext-base
 ### Containers should NOT run as root as a good practice
 USER 10001
 WORKDIR ${APP_ROOT}
