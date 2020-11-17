@@ -1,4 +1,4 @@
-# jefferyb/openshift-ubuntu
+# ricckli/openshift-ubuntu
 
 Official Ubuntu Docker image using OpenShift specific guidelines, built to run on Openshift/Kubernetes/Docker environment.
 
